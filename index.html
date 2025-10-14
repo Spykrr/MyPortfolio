@@ -113,9 +113,9 @@
             background: rgba(42, 42, 60, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 50px;
-            padding: 15px 30px;
+            padding: 15px 50px;
             margin: 0 auto 40px;
-            max-width: 600px;
+            max-width: 750px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -128,7 +128,7 @@
         }
 
         nav li {
-            margin: 0 15px;
+            margin: 0 12px;
         }
 
         nav a {
@@ -248,6 +248,172 @@
             position: absolute;
             left: 0;
             color: var(--primary);
+        }
+
+        /* Languages Section */
+        .languages-section {
+            padding: 60px 0;
+        }
+
+        .languages-content {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .language-card {
+            background: rgba(42, 42, 60, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            min-width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+        }
+
+        .language-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .language-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .language-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .language-level {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .language-proficiency {
+            background: rgba(108, 99, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+        }
+
+        .language-proficiency.native {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border-color: rgba(40, 167, 69, 0.3);
+        }
+
+        .language-proficiency.fluent {
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+            border-color: rgba(255, 193, 7, 0.3);
+        }
+
+        /* Certifications Section */
+        .certifications-section {
+            padding: 60px 0;
+        }
+
+        .certifications-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .certification-card {
+            background: rgba(42, 42, 60, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .certification-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .certification-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .certification-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--light);
+            line-height: 1.3;
+        }
+
+        .certification-issuer {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .certification-details {
+            margin-top: 15px;
+        }
+
+        .certification-date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .certification-id {
+            color: var(--gray);
+            font-size: 0.8rem;
+            font-family: 'Courier New', monospace;
+            background: rgba(108, 99, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .certification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .certification-badge i {
+            font-size: 0.7rem;
         }
 
         /* Projects Section */
@@ -373,12 +539,23 @@
                 flex-direction: column;
             }
             
+            nav {
+                max-width: 90%;
+                padding: 12px 20px;
+            }
+            
             nav ul {
                 flex-wrap: wrap;
+                justify-content: center;
             }
             
             nav li {
-                margin: 5px;
+                margin: 5px 8px;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+                padding: 6px 12px;
             }
             
             .skills-content {
@@ -408,6 +585,8 @@
                 <ul>
                     <li><a href="#about" class="active">Profil</a></li>
                     <li><a href="#skills">Compétences</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#languages">Langues</a></li>
                     <li><a href="#projects">Projets</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -427,12 +606,17 @@
                     <p>J'ai réalisé un stage au Ministère des Relations avec le Parlement, durant lequel j'ai développé une application de gestion des événements avec Laravel.</p>
                     
                     <div class="skills">
-                        <span class="skill">HTML</span>
-                        <span class="skill">CSS</span>
+                        <span class="skill">HTML5</span>
+                        <span class="skill">CSS3</span>
                         <span class="skill">JavaScript</span>
                         <span class="skill">React</span>
+                        <span class="skill">Angular</span>
+                        <span class="skill">Spring Boot</span>
                         <span class="skill">Laravel</span>
                         <span class="skill">Django</span>
+                        <span class="skill">TypeScript</span>
+                        <span class="skill">MySQL</span>
+                        <span class="skill">Docker</span>
                         <span class="skill">Git</span>
                     </div>
                 </div>
@@ -448,20 +632,162 @@
             </div>
             <div class="skills-content">
                 <div class="skills-column">
-                    <h3>Développement Web</h3>
+                    <h3>Développement Frontend</h3>
                     <ul>
-                        <li>HTML, CSS, JavaScript</li>
-                        <li>React, Laravel, Git</li>
-                        <li>Java, C, C++</li>
+                        <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                        <li>React, Angular, Vue.js</li>
+                        <li>TypeScript, Bootstrap, Tailwind CSS</li>
+                        <li>Responsive Design, PWA</li>
                     </ul>
                 </div>
                 <div class="skills-column">
-                    <h3>Bases de Données & Systèmes</h3>
+                    <h3>Développement Backend</h3>
                     <ul>
-                        <li>SQL, MySQL, Oracle</li>
-                        <li>Linux, Unix</li>
-                        <li>Développement web & API</li>
+                        <li>Spring Boot, Laravel, Django</li>
+                        <li>Node.js, Express.js</li>
+                        <li>RESTful APIs, GraphQL</li>
+                        <li>Microservices, Docker</li>
                     </ul>
+                </div>
+                <div class="skills-column">
+                    <h3>Bases de Données & Outils</h3>
+                    <ul>
+                        <li>MySQL, PostgreSQL, Oracle</li>
+                        <li>MongoDB, Redis</li>
+                        <li>Git, GitHub, GitLab</li>
+                        <li>Linux, Docker, CI/CD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div class="certifications-content">
+                <!-- Google Certification -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3>Introduction to Git and GitHub</h3>
+                            <div class="certification-issuer">Google</div>
+                        </div>
+                    </div>
+                    <div class="certification-details">
+                        <div class="certification-date">Émis en Mai 2025</div>
+                        <div class="certification-id">1ZFKKHO30V4L</div>
+                        <div class="certification-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Certification Premium</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Penn Engineering Certification -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3>Introduction to Java and Object-Oriented Programming</h3>
+                            <div class="certification-issuer">Penn Engineering</div>
+                        </div>
+                    </div>
+                    <div class="certification-details">
+                        <div class="certification-date">Émis en Décembre 2024</div>
+                        <div class="certification-id">SLAUV0YLOW20</div>
+                        <div class="certification-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Certification Premium</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IBM Certification -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3>Introduction to Containers w/ Docker, Kubernetes & OpenShift</h3>
+                            <div class="certification-issuer">IBM</div>
+                        </div>
+                    </div>
+                    <div class="certification-details">
+                        <div class="certification-date">Émis en Juin 2025</div>
+                        <div class="certification-id">LMHOSN7XUDGE</div>
+                        <div class="certification-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Certification Premium</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meta Certification -->
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="certification-info">
+                            <h3>React Native</h3>
+                            <div class="certification-issuer">Meta</div>
+                        </div>
+                    </div>
+                    <div class="certification-details">
+                        <div class="certification-date">Émis en Juin 2025</div>
+                        <div class="certification-id">HRDE4PY0ARTY</div>
+                        <div class="certification-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Certification Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="languages-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Langues</h2>
+            </div>
+            <div class="languages-content">
+                <div class="language-card">
+                    <div class="language-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <div class="language-name">Arabe</div>
+                    <div class="language-level">Langue maternelle</div>
+                    <div class="language-proficiency native">Natif</div>
+                </div>
+                
+                <div class="language-card">
+                    <div class="language-icon">
+                        <i class="fas fa-globe-europe"></i>
+                    </div>
+                    <div class="language-name">Français</div>
+                    <div class="language-level">Courant</div>
+                    <div class="language-proficiency fluent">Courant</div>
+                </div>
+                
+                <div class="language-card">
+                    <div class="language-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="language-name">Anglais</div>
+                    <div class="language-level">Courant</div>
+                    <div class="language-proficiency fluent">Courant</div>
                 </div>
             </div>
         </div>
@@ -476,7 +802,7 @@
             <div class="projects-grid">
                 <!-- NGCODERS Project -->
                 <div class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #28a745, #20c997);">
+                    <div class="project-img">
                         <i class="fas fa-feather-alt"></i>
                     </div>
                     <div class="project-content">
@@ -582,6 +908,9 @@
                         <a href="https://github.com/Spykrr" class="social-link-contact" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbgsXwQRHzshTFDxclFmlqnSTqmZTNspSkHtMGpjctshSqGRMRvcPdcpfMkQgmgpvKXKdF" class="social-link-contact" target="_blank">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                         <a href="https://www.linkedin.com/in/othmane-errahmi-04b777234/" class="social-link-contact" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
@@ -645,6 +974,4 @@
         });
     </script>
 </body>
-
 </html>
-
