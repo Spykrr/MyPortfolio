@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -307,17 +308,6 @@
             border: 1px solid rgba(108, 99, 255, 0.3);
         }
 
-        .language-proficiency.native {
-            background: rgba(40, 167, 69, 0.1);
-            color: #28a745;
-            border-color: rgba(40, 167, 69, 0.3);
-        }
-
-        .language-proficiency.fluent {
-            background: rgba(255, 193, 7, 0.1);
-            color: #ffc107;
-            border-color: rgba(255, 193, 7, 0.3);
-        }
 
         /* Certifications Section */
         .certifications-section {
@@ -477,12 +467,14 @@
         .contact-content {
             display: flex;
             justify-content: center;
+            align-items: flex-start;
             gap: 50px;
+            flex-wrap: wrap;
         }
 
         .contact-info {
             flex: 1;
-            max-width: 600px;
+            max-width: 500px;
         }
 
         .contact-item {
@@ -529,6 +521,95 @@
             transform: translateY(-5px);
         }
 
+        /* Contact Form Styles */
+        .contact-form-container {
+            flex: 1;
+            max-width: 600px;
+            min-width: 400px;
+            background: rgba(42, 42, 60, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--light);
+        }
+
+        .contact-form-title span.gradient-text {
+            background: linear-gradient(to right, #6c63ff, #00d4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-input,
+        .form-textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 1rem;
+            color: var(--light);
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-submit-btn {
+            background: linear-gradient(to right, #6c63ff, #00d4ff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 32px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .form-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+        }
+
+        .form-submit-btn:active {
+            transform: translateY(0);
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
@@ -562,8 +643,23 @@
                 flex-direction: column;
             }
             
+            .contact-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
             .contact-info {
                 max-width: 100%;
+            }
+
+            .contact-form-container {
+                padding: 30px 20px;
+                min-width: 100%;
+                max-width: 100%;
+            }
+
+            .contact-form-title {
+                font-size: 2rem;
             }
         }
     </style>
@@ -573,7 +669,7 @@
     <header>
         <div class="container">
             <div class="profile-container">
-                <img src="pfp2.jpg" alt="Othmane Errahmi" class="profile-pic">
+                <img src="./link_pic.jpg" alt="Othmane Errahmi" class="profile-pic">
                 <div class="profile-overlay">
                     <i class="fas fa-eye"></i>
                 </div>
@@ -602,7 +698,7 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Je suis étudiant en quatrième année à l'École Marocaine des Sciences de l'Ingénieur (EMSI). Passionné par le développement informatique, j'ai des compétences solides en programmation, en bases de données, et en systèmes d'exploitation.</p>
+                    <p>Je suis étudiant en cinquieme année à l'École Marocaine des Sciences de l'Ingénieur (EMSI). Passionné par le développement informatique, j'ai des compétences solides en programmation, en bases de données, et en systèmes d'exploitation.</p>
                     <p>J'ai réalisé un stage au Ministère des Relations avec le Parlement, durant lequel j'ai développé une application de gestion des événements avec Laravel.</p>
                     
                     <div class="skills">
@@ -682,11 +778,6 @@
                     </div>
                     <div class="certification-details">
                         <div class="certification-date">Émis en Mai 2025</div>
-                        <div class="certification-id">1ZFKKHO30V4L</div>
-                        <div class="certification-badge">
-                            <i class="fas fa-star"></i>
-                            <span>Certification Premium</span>
-                        </div>
                     </div>
                 </div>
 
@@ -703,11 +794,6 @@
                     </div>
                     <div class="certification-details">
                         <div class="certification-date">Émis en Décembre 2024</div>
-                        <div class="certification-id">SLAUV0YLOW20</div>
-                        <div class="certification-badge">
-                            <i class="fas fa-star"></i>
-                            <span>Certification Premium</span>
-                        </div>
                     </div>
                 </div>
 
@@ -724,11 +810,6 @@
                     </div>
                     <div class="certification-details">
                         <div class="certification-date">Émis en Juin 2025</div>
-                        <div class="certification-id">LMHOSN7XUDGE</div>
-                        <div class="certification-badge">
-                            <i class="fas fa-star"></i>
-                            <span>Certification Premium</span>
-                        </div>
                     </div>
                 </div>
 
@@ -745,11 +826,6 @@
                     </div>
                     <div class="certification-details">
                         <div class="certification-date">Émis en Juin 2025</div>
-                        <div class="certification-id">HRDE4PY0ARTY</div>
-                        <div class="certification-badge">
-                            <i class="fas fa-star"></i>
-                            <span>Certification Premium</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -902,9 +978,6 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Contact</h2>
-            </div>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -942,13 +1015,25 @@
                         <a href="https://github.com/Spykrr" class="social-link-contact" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbgsXwQRHzshTFDxclFmlqnSTqmZTNspSkHtMGpjctshSqGRMRvcPdcpfMkQgmgpvKXKdF" class="social-link-contact" target="_blank">
-                            <i class="fas fa-envelope"></i>
-                        </a>
                         <a href="https://www.linkedin.com/in/othmane-errahmi-04b777234/" class="social-link-contact" target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2 class="contact-form-title">Get in <span class="gradient-text">Touch</span></h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Votre nom" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Votre email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-textarea" placeholder="Votre message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit-btn">Envoyer le message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1004,6 +1089,52 @@
                 if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
                 }
+            });
+        });
+
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Show loading state
+            const submitBtn = this.querySelector('.form-submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            // EmailJS configuration
+            const serviceID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+            const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+            
+            // Send email using EmailJS
+            emailjs.send(serviceID, templateID, {
+                from_name: name,
+                from_email: email,
+                message: message,
+                to_email: 'othmaneasap@gmail.com'
+            })
+            .then(function(response) {
+                // Success
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                alert('Merci pour votre message ! Je vous répondrai dès que possible.');
+                document.getElementById('contactForm').reset();
+            }, function(error) {
+                // Error
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                alert('Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou me contacter directement à othmaneasap@gmail.com');
+                console.error('EmailJS Error:', error);
             });
         });
     </script>
